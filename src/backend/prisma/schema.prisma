@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(uuid())
+  email    String @unique
+  name     String
+  password String
+}
+
+model Research {
+  id                  String         @id @default(uuid())
+  name                String
+  creationDate        DateTime       @default(now())
+  identifier          String
+  numberDistributions Int            @default(0)
+  distributionDate    DateTime?
+  distribution_list   Distribution[]
+}
+
+model Distribution {
+  id                    String             @id @default(uuid())
+  name                  String
+  channel               String
+  created_at            DateTime           @default(now())
+  answered              Int                @default(0)
+  pendent               Int                @default(0)
+  anonymous_answer      Boolean
+  csv_file              String
+  canceled_subscription Int                @default(0)
+  included              Int                @default(0)
+  valid                 Int                @default(0)
+  sent                  Int                @default(0)
+  sent_at               DateTime?
+  updated_at            DateTime           @updatedAt
+  template              String
+  research              Research           @relation(fields: [research_id], references: [id])
+  research_id           String
+  DistributionList      DistributionList[]
+  Answers               Answers[]
+}
+
+model DistributionList {
+  id              String       @id @default(uuid())
+  name            String
+  email           String
+  phoneNumber     String
+  age             Int
+  isValid         Boolean
+  distribution    Distribution @relation(fields: [distribution_id], references: [id])
+  distribution_id String
+}
+
+model Answers {
+  id              String       @id @default(uuid())
+  phoneNumber     String
+  Time            Int
+  finished        Boolean
+  started         Boolean
+  answer          String
+  distribution    Distribution @relation(fields: [distribution_id], references: [id])
+  distribution_id String
+}

@@ -1,0 +1,6 @@
+projectKey=g2-m9-whole-project
+serverUrl=http://localhost:9000
+serverVersion=10.4.1.88267
+dashboardUrl=http://localhost:9000/dashboard?id=g2-m9-whole-project
+ceTaskId=236e2669-02a2-4d82-980c-fa7769e5548d
+ceTaskUrl=http://localhost:9000/api/ce/task?id=236e2669-02a2-4d82-980c-fa7769e5548d

@@ -1,0 +1,47 @@
+.sidebar {
+    width: 6%;
+    height: 100vh;
+    position: fixed;
+    background-color: #071239;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .btn-menu, .btn-settings {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    margin-bottom: 50px;
+    margin-top: 20px
+  }
+
+  .btn-menu {
+    background: white; /* Fundo branco para a bolinha */
+    border-radius: 50%; /* Faz a borda ser completamente redonda, criando uma forma circular */
+    color: #071239; /* Cor do ícone igual à cor do fundo */
+    cursor: pointer;
+    font-size: 24px; /* Ajuste conforme necessário */
+    padding: 10px; /* Espaço entre o ícone e a borda da bolinha, ajuste conforme necessário */
+    border: none; /* Remove a borda, se houver alguma */
+  
+    /* Outras propriedades necessárias para o layout e funcionamento do botão */
+    display: inline-flex; /* Permite o alinhamento do ícone dentro do círculo */
+    align-items: center; /* Centraliza verticalmente o ícone dentro do círculo */
+    justify-content: center; /* Centraliza horizontalmente o ícone dentro do círculo */
+    width: 50px; /* Largura do botão, ajuste conforme necessário */
+    height: 50px; /* Altura do botão, ajuste conforme necessário */
+  }
+  
+
+  @media (max-width: 768px){
+    .sidebar{
+        display: none;
+    }
+    
+}

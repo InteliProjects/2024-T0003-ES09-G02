@@ -1,0 +1,14 @@
+<div class="card-pesquisa">
+    <div class="infos-pesquisa">
+        <h1>{{nomePesquisa}}</h1>
+        <p id="criacao">Criado em {{dataPesquisa}}</p>
+        <p><b style="font-weight: 600;">Identificador: </b>{{idPesquisa}}</p>
+        <p><b style="font-weight: 600;">Número de distribuições:</b> {{quantidadePesquisa}}</p>
+        <p><b style="font-weight: 600;">Data da última distribuição: </b>{{ultimaPesquisa}}</p>
+    </div>
+    <button class="btt-dist" (click)="dist()">
+        <p>Distribuições</p>
+        <img src="../../../assets/Send_fill.svg" alt="ir">
+    </button>
+</div>
+

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="top">
+      <p>Clientes</p>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <p style="margin-top: 35px; margin-left: 81px;">Suba a base de clientes que responderá a distribuição desta pesquisa.</p>
+      <div class="form-group">
+        <p>Faça upload do arquivo:</p>
+        <label for="input-file">
+          <p class="upload">Selecionar arquivo</p>
+          <input id="input-file" type="file" (change)="onFileSelected($event)">
+        </label>
+      </div>
+      <div class="form-group">
+        <p>Ou se preferir, faça o download do modelo da planilha:</p>
+        <label for="input-file">
+          <p class="upload" style="background-color: #fff; border: 1px solid #A4AFB9; color: #000;">Download da planilha</p>
+          <!-- <input id="input-file" type="file" formControlName="csv_file" id="csv_file" (change)="onFileSelected($event)"> -->
+        </label>
+      </div>
+      <div class="bottom">
+
+        <div class="visual">
+          <p>Visualização da planilha:</p>
+          <table></table>
+        </div>
+        <div class="buttons">
+          <button style="margin-left: 47px;" (click)="goBack()">< Canal</button>
+          <button class="nextPage" style="margin-right: 47px;">Comunicação ></button>
+        </div>
+      </div>
+    </form>
+  </div>

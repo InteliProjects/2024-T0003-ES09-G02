@@ -1,0 +1,76 @@
+<div id="container">
+    <div>
+        <app-navbar></app-navbar>
+    </div>
+    <div id="containerDistribuicoes">
+        <app-topbar (openModalEvent)="openModal()"></app-topbar>
+        <div id="containerHeader">
+            <div id="header">
+                <div class="dadosHeader">
+                    <h1>{{ nomePesquisa }}</h1>
+                    <h4><span class="spanh4">Número de distribuições: </span> {{ numeroDistribuicoes }}</h4>
+                </div>
+                <p>Criado em: {{ dataPesquisa }}</p>
+                <div class="search-box">
+                    <img src="../../../assets/search.svg" alt="Menu" class="search-icon" />
+                    <input type="text" class="search-input" placeholder="Pesquisar" (input)="buscarDistribuicao($event)">
+                </div>
+            </div>
+        </div>
+        <div class="tbl-header">
+            <table class="table"id="table">
+                <thead class="thead-warning">
+                  <tr>
+                    <th style="text-align: center;" scope="col">#</th>
+                    <th style="text-align: center;" scope="col">Nome</th>
+                    <th style="text-align: center;" scope="col" style="text-align: center;" >Canal</th>
+                    <th style="text-align: center;" scope="col">Data de criação</th>
+                    <th style="text-align: center;" scope="col">Enviado</th>
+                    <th style="text-align: center;" scope="col">Recebido</th>
+                    <th style="text-align: center;" scope="col">Aberto</th>
+                    <th style="text-align: center;" scope="col">Clicado</th>
+                  </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table>
+                <tbody id="table-body-distribuicoes">
+                    @for (item of filteredDistribuicoes; track item.key){
+                        <tr>
+                            <th style="text-align: center;" scope="row">{{item.key}}</th>
+                            <td style="text-align: center;" >{{item.name}}</td>
+                            <td style="text-align: center;">
+                                <ng-container *ngIf="item.channel === 'Whatsapp'; else SMS">
+                                    <img style="width: 32px; height: 32px;" src="../../../assets/whatsapp.svg" alt="Icone Whatsapp">
+                                </ng-container>
+                                <ng-template #SMS>
+                                    <img style="width: 21px; height: 34px;" src="../../../assets/sms.svg" alt="Icone SMS">
+                                </ng-template>
+                            </td>
+                            <td style="text-align: center;"> {{item.created_at.slice(0, 10)}}</td>
+                            <td style="text-align: center;"> {{item.sent}}</td>
+                            <td style="text-align: center;"> {{item.sent}}</td>
+                            <td style="text-align: center;"> {{item.sent}}</td>
+                            <td style="text-align: center;"> {{item.sent}} </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <button class="paginationButton" (click)="previousPage()" [disabled]="currentPage === 1">&lt;</button>
+            <div class="paginationButtondiv">
+                <ng-container *ngFor="let page of pages">
+                  <button class="paginationPageButton" (click)="goToPage(page)" [class.active]="currentPage === page">{{ page }}</button>
+                </ng-container>
+              </div>
+            <button class="paginationButton" (click)="nextPage()" [disabled]="currentPage === totalPages">&gt;</button>
+        </div>
+    </div> 
+</div>
+<div *ngIf="showModal" class="modal-backdrop" >
+    <div class="modal">
+        <app-modal [researchId]="idPesquisa"></app-modal>
+    </div>
+</div>

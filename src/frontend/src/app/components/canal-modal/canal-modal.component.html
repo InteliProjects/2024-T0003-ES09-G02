@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="top">
+        <p>Canal</p>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <p>Nome da distribuição:</p>
+            <input type="text" formControlName="name" id="name">
+        </div>
+        
+        <div class="form-group">
+            <p>Canal de distribuição:</p>
+            <div class="options">
+                <div [ngClass]="{'selected-channel': selectedChannel === 'whatsapp'}" class="option" (click)="addChannel('whatsapp')" (click)="selectChannel('whatsapp')">
+                    <img src="../../../assets/whatsapp.svg" alt="">
+                    <p>Whatsapp</p>
+                </div>
+                <div  [ngClass]="{'selected-channel': selectedChannel === 'sms'}" class="option" (click)="addChannel('sms-link')" (click)="selectChannel('sms')" >
+                    <img src="../../../assets/sms.svg" alt="">
+                    <p>SMS-Link</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input class="checkbox-input" type="checkbox" [checked]="anonymous" id="anonymous_answer">
+            <p>Distribuição anônima</p>
+        </div>
+
+        <div class="bottom">
+            <button class="buttonClients" type="submit">Clientes ></button>
+        </div>
+    </form>
+
+</div>

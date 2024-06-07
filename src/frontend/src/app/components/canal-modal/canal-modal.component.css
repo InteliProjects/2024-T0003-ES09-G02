@@ -1,0 +1,100 @@
+.container{
+    width: 1064px;
+    height: 645px;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100px;
+    border-bottom: 1px solid #55565A;
+    align-self: center;
+    justify-self: center;
+
+}
+
+.top p{
+    margin: 0;
+    font-size: 32px;
+    color: #55565A;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    font-size: 21px;
+    margin-top: 62px;
+}
+
+.form-group{
+    margin-left: 81px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 18px;
+}
+
+.form-group input[type="text"]{
+    width: 513px;
+    height: 43px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.options{
+    display: flex;
+    gap: 22px;
+}
+
+.option{
+    padding-top: 5px;
+    width: 86px;
+    height: 86px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option p {
+    font-size: 12px;
+}
+
+.checkbox-input{
+    width: 26px;
+    height: 26px;
+}
+
+.bottom{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.bottom button{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-right: 66px;
+    color: #55565A;
+    cursor: pointer;
+    margin-bottom: 45px;
+}
+
+.selected-channel{
+    /* border: 1px solid blue; */
+    background-color: lightgrey;
+}

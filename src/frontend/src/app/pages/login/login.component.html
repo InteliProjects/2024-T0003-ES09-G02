@@ -1,0 +1,28 @@
+<div id="ContainerLogin">
+    <div id="LoginInteract">
+        <img class="logo" src="../../../assets/logo.png">
+        <div class="ContainerLoginForm">
+            <h2>Olá!</h2>
+            <form id="loginForm">
+                <div class="divInput">
+                    <label for="email">E-mail profissional</label>
+                    <input class="inputLogin" type="text" id="email" name="email" [(ngModel)]="email" required>
+                </div>
+                <div class="divInputPass">
+                    <label for="password">Senha</label>
+                    <input class="inputLogin" type="password" id="password" name="password" [(ngModel)]="password" required>
+                </div>
+                <p id="errorMessage" class="error-message">{{ errorMessage }}</p>
+                <button class="buttonLogin" type="button" (click)="login()">Acessar</button>
+                <button class="buttonGoogle" type="button" (click)="loginGoogle()"><img class="googleIcon" src="../../../assets/google.svg">ACESSAR COM CONTA GOOGLE</button>
+            </form>
+        </div>
+    </div>
+    <div id="LoginStatic">
+        <img class="iconTwo" src="../../../assets/OpenCX_Logo_Colorida-2.png">
+        <div class="tittleStatic">
+            <h2>Utilize o <span class="spanText">poder da inteligência artificial</span><br>para impulsionar seus resultados em CX.</h2>
+        </div>
+        <div class="moreButton"><p>Saiba Mais</p></div>
+    </div>
+</div>

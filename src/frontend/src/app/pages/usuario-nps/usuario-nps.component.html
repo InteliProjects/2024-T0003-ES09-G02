@@ -1,0 +1,33 @@
+<div class="container-nps">
+    <div class="topbar-nps">
+        <div class="topbar-title-nps">
+            <p>Pesquisa de Satisfação - NPS</p>
+        </div>
+    </div>
+    <div class="container-nps">
+        <button (click)="showPesquisa()" *ngIf="!showPesquisaBox">Mostrar Pesquisa</button>
+        <div class="caixa-pesquisa-nps" *ngIf="showPesquisaBox">
+            <p>Considerando a experiência que você teve com nosso suporte, o quanto você recomendaria a Track para um amigo ou familiar?</p>
+            <div class="notas-nps">
+                <div class="notas-1">
+                    <div class="numero-nps nps-cor-0" (click)="setNota(0)">0</div>
+                    <div class="numero-nps nps-cor-1" (click)="setNota(1)">1</div>
+                    <div class="numero-nps nps-cor-2" (click)="setNota(2)">2</div>
+                    <div class="numero-nps nps-cor-3" (click)="setNota(3)">3</div>
+                    <div class="numero-nps nps-cor-4" (click)="setNota(4)">4</div>
+                    <div class="numero-nps nps-cor-5" (click)="setNota(5)">5</div>
+                </div>
+                <div class="notas-1">
+                    <div class="numero-nps nps-cor-6" (click)="setNota(6)">6</div>
+                    <div class="numero-nps nps-cor-7" (click)="setNota(7)">7</div>
+                    <div class="numero-nps nps-cor-8" (click)="setNota(8)">8</div>
+                    <div class="numero-nps nps-cor-9" (click)="setNota(9)">9</div>
+                    <div class="numero-nps nps-cor-10" (click)="setNota(10)">10</div>
+                </div>
+            </div>
+            <p>Em poucas palavras, descreva o que motiva a sua nota:</p>
+            <input class="input-nps" type="text" placeholder="Escreva aqui a sua resposta." [(ngModel)]="respostaInput">
+            <button (click)="sendPesquisa()" class="button-nps">Enviar Resposta</button>
+        </div>
+    </div>
+</div>

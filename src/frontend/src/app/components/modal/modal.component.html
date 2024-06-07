@@ -1,0 +1,16 @@
+<div>
+    <app-canal-modal 
+    *ngIf="page === '1'"
+    (nextPage)="changePage($event)"
+    ></app-canal-modal>
+    <app-clients-modal 
+    *ngIf="page === '2'"
+    (nextPage)="changePage($event)"
+    ></app-clients-modal>
+    <app-communication-modal 
+    *ngIf="page === '3'"
+    (nextPage)="changePage($event)"
+    ></app-communication-modal>
+    <!-- <app-error-modal *ngIf="success === 'error'"></app-error-modal> -->
+    <!-- <app-sucess-modal *ngIf="success === 'success'"></app-sucess-modal> -->
+</div>

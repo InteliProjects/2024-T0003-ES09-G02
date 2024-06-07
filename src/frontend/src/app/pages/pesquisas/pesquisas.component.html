@@ -1,0 +1,14 @@
+<div class="pesquisasPage">
+    <app-navbar></app-navbar>
+    <div class="pesquisas-content">
+        <app-topbar></app-topbar>
+    <div class="search-box">
+        <img src="../../../assets/search.svg" alt="Menu" class="search-icon" />
+        <input type="text" class="search-input" placeholder="Pesquisar">
+    </div>
+    <div *ngFor="let item of pesquisas" >
+        <app-pesquisa [nomePesquisa]="item.name" [dataPesquisa]="item.creationDate" [idPesquisa]="item.id" [quantidadePesquisa]="item.numberDistributions" [ultimaPesquisa]="item.distributionDate"></app-pesquisa>
+    </div>
+    </div>
+</div>
+

@@ -1,0 +1,734 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "v1.0.0",
+    "title": "Swagger Demo Project",
+    "description": "Implementation of Swagger with TypeScript"
+  },
+    "title": "Projeto - Grupo 2",
+    "description": "Documentação da API"
+  },
+  "tags": [
+    {
+      "name": "Research",
+      "description": "Operações relacionadas a pesquisas"
+    },
+    {
+      "name": "Distribution",
+      "description": "Operações relacionadas a distribuições"
+    }
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": ""
+    }
+  ],
+  
+"paths": {
+    "/researches/": {
+      "get": {
+        "description": "",
+        "tags": ["Research"],
+        "description": "Obter todas as pesquisas.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+        "tags": ["Research"],
+        "description": "Criar uma nova pesquisa.",
+        "responses": {
+          "201": {
+            "description": "Criado"
+          }
+        },
+        
+      "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "string"
+                  },
+                  "identifier": {
+                    "example": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    
+  "/researches/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+                "$ref": "#/components/schemas/ResearchDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    
+  "/researches/{id}": {
+      "get": {
+        "tags": ["Research"],
+        "description": "Obter uma pesquisa pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Não encontrado"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Research"],
+        "description": "Atualizar uma pesquisa existente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Não encontrado"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+=======
+      "delete": {
+        "tags": ["Research"],
+        "description": "Excluir uma pesquisa pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "example": "UUID"
+                  },
+                  "name": {
+                    "example": "string"
+                  },
+                  "creationDate": {
+                    "example": "date"
+                  },
+                  "identifier": {
+                    "example": "string"
+                  },
+                  "numberDistributions": {
+                    "example": "int"
+                  },
+                  "distributionDate": {
+                    "example": "date"
+                  },
+                  "distribution_list": {
+                    "example": [
+                      {
+                        "id": "UUID",
+                        "name": "string",
+                        "channel": "string",
+                        "created_at": "date",
+                        "answered": "int",
+                        "pendent": "int",
+                        "anonymous_answer": "boolean",
+                        "csv_file": "string",
+                        "canceled_subscription": "int",
+                        "included": "int",
+                        "valid": "int",
+                        "sent": "int",
+                        "sent_at": "date",
+                        "updated_at": "date",
+                        "template": "string",
+                        "research_id": "UUID"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+=======
+          "204": {
+            "description": "Sem conteúdo"
+          }
+        }
+      }
+    },
+    "/distribuitions/": {
+        "get": {
+        "tags": ["Distribution"],
+        "description": "Obter todas as distribuições.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Distribution"],
+        "description": "Criar uma nova distribuição.",
+        "responses": {
+          "201": {
+            "description": "Criado"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/distribuitions/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "string"
+                  },
+                  "channel": {
+                    "example": "string"
+                  },
+                  "anonymous_answer": {
+                    "example": "boolean"
+                  },
+                  "csv_file": {
+                    "example": "string"
+                  },
+                  "template": {
+                    "example": "string"
+                  },
+                  "research_id": {
+                    "example": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/distribuitions/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+=======
+                "$ref": "#/components/schemas/DistribuitionDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/distribuitions/{id}": {
+      "get": {
+        "tags": ["Distribution"],
+        "description": "Obter uma distribuição pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Não encontrado"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Distribution"],
+        "description": "Atualizar uma distribuição existente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Não encontrado"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DistribuitionDTO"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+
+      "put": {
+        "description": "",
+      "delete": {
+        "tags": ["Distribution"],
+        "description": "Excluir uma distribuição pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "example": "UUID"
+                  },
+                  "name": {
+                    "example": "string"
+                  },
+                  "channel": {
+                    "example": "string"
+                  },
+                  "created_at": {
+                    "example": "date"
+                  },
+                  "answered": {
+                    "example": "int"
+                  },
+                  "anonymous_answer": {
+                    "example": "boolean"
+                  },
+                  "csv_file": {
+                    "example": "string"
+                  },
+                  "pendent": {
+                    "example": "int"
+                  },
+                  "canceled_subscription": {
+                    "example": "int"
+                  },
+                  "included": {
+                    "example": "int"
+                  },
+                  "valid": {
+                    "example": "int"
+                  },
+                  "sent": {
+                    "example": "int"
+                  },
+                  "template": {
+                    "example": "string"
+                  },
+                  "research_id": {
+                    "example": "UUID"
+                  },
+                  "sent_at": {
+                    "example": "date"
+                  },
+                  "updated_at": {
+                    "example": "date"
+                  }
+                }
+              }
+            }
+=======
+          "204": {
+            "description": "Sem conteúdo"
+          }
+        }
+      }
+    },
+    "/distribuitions/upload/{id}": {
+      "post": {
+        "tags": ["Distribution"],
+        "description": "Fazer upload de um arquivo para uma distribuição.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "Arquivo para upload",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "Selecione um arquivo para fazer upload"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Sem conteúdo"
+          }
+        }
+      }
+    },
+    "/distribuitions/download/{id}": {
+      "get": {
+        "tags": ["Distribution"],
+        "description": "Baixar um arquivo de uma distribuição pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResearchDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "any"
+          },
+          "name": {
+            "type": "string",
+            "example": "any"
+          },
+          "creationDate": {
+            "type": "string",
+            "example": "any"
+          },
+          "identifier": {
+            "type": "string",
+            "example": "any"
+          },
+          "numberDistributions": {
+            "type": "number",
+            "example": "any"
+          },
+          "distributionDate": {
+            "type": "string",
+            "example": "any"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/distribuitions/upload/{id}": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+=======
+      "DistribuitionDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "any"
+          },
+          "name": {
+            "type": "string",
+            "example": "any"
+          },
+          "channel": {
+            "type": "string",
+            "example": "any"
+          },
+          "created_at": {
+            "type": "string",
+            "example": "any"
+          },
+          "answered": {
+            "type": "number",
+            "example": "any"
+          },
+          "anonymous_answer": {
+            "type": "boolean",
+            "example": "any"
+          },
+          "csv_file": {
+            "type": "string",
+            "example": "any"
+          },
+          "pendent": {
+            "type": "number",
+            "example": "any"
+          },
+          "canceled_subscription": {
+            "type": "number",
+            "example": "any"
+          },
+          "included": {
+            "type": "number",
+            "example": "any"
+          },
+          "valid": {
+            "type": "number",
+            "example": "any"
+          },
+          "sent": {
+            "type": "number",
+            "example": "any"
+          },
+          "template": {
+            "type": "string",
+            "example": "any"
+          },
+          "research_id": {
+            "type": "string",
+            "example": "any"
+          },
+          "sent_at": {
+            "type": "string",
+            "example": "any"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "any"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/distribuitions/download/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
+=======
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
